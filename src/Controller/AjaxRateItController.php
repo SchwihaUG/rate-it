@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use cgoIT\rateit\RateIt;
 
-class AjaxRateItController extends Controller {
+class AjaxRateItController extends AbstractController {
     /**
      * Handles rating requests.
      *
