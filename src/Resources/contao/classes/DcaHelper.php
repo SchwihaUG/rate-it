@@ -57,7 +57,7 @@ class DcaHelper extends \Backend
 			$intPid = $this->Input->get('id');
 		}
 
-		return $this->getTemplateGroup('rateit_', $intPid);
+		return $this->getTemplateGroup('rateit_');
 	}
 
 	/**
