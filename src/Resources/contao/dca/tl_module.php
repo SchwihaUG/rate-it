@@ -38,7 +38,7 @@ $GLOBALS['TL_DCA']['tl_module']['config']['ondelete_callback'][] = array('tl_mod
  */
 $GLOBALS['TL_DCA']['tl_module']['palettes']['rateit'] = '{title_legend},name,rateit_title,type;{rateit_legend},rateit_active;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 $GLOBALS['TL_DCA']['tl_module']['palettes']['rateit_top_ratings'] = '{title_legend},name,headline,type;{rateit_legend},rateit_types,rateit_toptype,rateit_count,rateit_template;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
-$GLOBALS['TL_DCA']['tl_module']['palettes']['articleList'] = $GLOBALS['TL_DCA']['tl_module']['palettes']['articleList'].';{rateit_legend},rateit_active';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['articleList'] = ($GLOBALS['TL_DCA']['tl_module']['palettes']['articleList'] ?? null).';{rateit_legend},rateit_active';
 
 /**
  * fields
