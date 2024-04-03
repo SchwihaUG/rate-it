@@ -41,7 +41,7 @@ $GLOBALS['TL_DCA']['tl_faq']['config']['ondelete_callback'][] = array('tl_faq_ra
  * Palettes
  */
 $GLOBALS['TL_DCA']['tl_faq']['palettes']['__selector__'][] = 'addRating';
-$GLOBALS['TL_DCA']['tl_faq']['palettes']['default'] = $GLOBALS['TL_DCA']['tl_faq']['palettes']['default'].';{rating_legend:hide},addRating';
+$GLOBALS['TL_DCA']['tl_faq']['palettes']['default'] = ($GLOBALS['TL_DCA']['tl_faq']['palettes']['default'] ?? null).';{rating_legend:hide},addRating';
 
 /**
  * Add subpalettes to tl_article
