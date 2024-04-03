@@ -122,7 +122,7 @@ class RateItFrontend extends \Hybrid
 			$label = count($labels) == 2 ? $labels[1] : (((($rating['totalRatings'] > 1 || $rating['totalRatings'] == 0) || !$rating)) ? $labels[2] : $labels[1]);
 			$description = $GLOBALS['TL_CONFIG']['rating_description'];
 		}
-		$actValue = $rating === false ? 0 : $rating[totalRatings];
+		$actValue = $rating === false ? 0 : $rating['totalRatings'];
 		$type = $GLOBALS['TL_CONFIG']['rating_type'] == 'hearts' ? $GLOBALS['TL_LANG']['rateit']['hearts'] : $GLOBALS['TL_LANG']['rateit']['stars'];
 // 		return str_replace('.', ',', $stars)."/$this->intStars ".$type." ($actValue $label)";
 		$description = str_replace('%current%', str_replace('.', ',', $stars), $description);
