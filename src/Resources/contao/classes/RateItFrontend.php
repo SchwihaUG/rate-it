@@ -116,7 +116,7 @@ class RateItFrontend extends \Hybrid
 		$stars = $this->percentToStars($rating['rating']);
 		preg_match('/^.*\[(.+)\|(.+)\].*$/i', $GLOBALS['TL_CONFIG']['rating_description'], $labels);
 		if (!is_array($labels) && (!count($labels) == 2 || !count($labels) == 3)) {
-			$label = ($rating[totalRatings] > 1 || $rating[totalRatings] == 0) || !$rating ? $GLOBALS['TL_LANG']['rateit']['rating_label'][1] : $GLOBALS['TL_LANG']['rateit']['rating_label'][0];
+			$label = ($rating['totalRatings'] > 1 || $rating['totalRatings'] == 0) || !$rating ? $GLOBALS['TL_LANG']['rateit']['rating_label'][1] : $GLOBALS['TL_LANG']['rateit']['rating_label'][0];
 			$description = '%current%/%max% %type% (%count% ['.$GLOBALS['TL_LANG']['tl_rateit']['vote'][0].'|'.$GLOBALS['TL_LANG']['tl_rateit']['vote'][1].'])';
 		} else {
 			$label = count($labels) == 2 ? $labels[1] : (((($rating['totalRatings'] > 1 || $rating['totalRatings'] == 0) || !$rating)) ? $labels[2] : $labels[1]);
