@@ -1,19 +1,21 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: darko
- * Date: 23.10.17
- * Time: 23:55
- */
 
 namespace cgoIT\rateit\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use cgoIT\rateit\RateIt;
+use Contao\CoreBundle\Framework\ContaoFramework;
 
 class AjaxRateItController extends AbstractController {
+    private $framework;
+
+    public function __construct(ContaoFramework $framework) {
+        $this->framework = $framework;
+    }
+
     /**
      * Handles rating requests.
      *
@@ -22,8 +24,7 @@ class AjaxRateItController extends AbstractController {
      * @Route("/rateit", name="ajax_rateit", defaults={"_scope" = "frontend", "_token_check" = false})
      */
     public function ajaxAction() {
-
-        $this->container->get('contao.framework')->initialize();
+        $this->framework->initialize();
 
         $controller = new RateIt();
 
@@ -32,5 +33,4 @@ class AjaxRateItController extends AbstractController {
 
         return new Response(null);
     }
-
 }
